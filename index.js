@@ -1,7 +1,6 @@
 /**
  * Packages
  */
-const SmeeClient = require('smee-client')
 const express = require('express')
 const expressApp = express()
 const path = require('path')
@@ -9,17 +8,6 @@ const bodyParser = require('body-parser')
 const {
   verifyWebhookData
 } = require('./middleware/verifyWebhooks')
-
-const smee = new SmeeClient({
-  source: 'https://smee.io/2HBeOiSPS2j4ryR',
-  target: 'http://localhost:3000/events',
-  logger: console
-})
-
-const events = smee.start()
-
-// Stop forwarding events
-events.close()
 /**
  * Controllers
  */
@@ -33,12 +21,14 @@ const {
 const {
   listForSuite
 } = require('./controllers/checks')
+
 /**
  * Constants
  */
 const {
   configFileName,
-  messages
+  messages,
+  events
 } = require('./constants.js')
 const publicDirectory = path.join(`${__dirname}`, 'public')
 
