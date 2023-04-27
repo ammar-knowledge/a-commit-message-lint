@@ -33,14 +33,12 @@ const {
 const {
   listForSuite
 } = require('./controllers/checks')
-
 /**
  * Constants
  */
 const {
   configFileName,
-  messages,
-  events
+  messages
 } = require('./constants.js')
 const publicDirectory = path.join(`${__dirname}`, 'public')
 
