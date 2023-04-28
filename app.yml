@@ -124,10 +124,8 @@ default_permissions:
   # https://developer.github.com/v3/apps/permissions/
   # organization_administration: read
 
-# Commit-message-lint is using the `.github/config.yml` file for configuration when signed up for the "pro" plan
-
+# Commit-message-lint is using the `.github/config.yml` file for configuration.
 # https://developer.github.com/v3/apps/permissions/#permission-on-single-file
-
 single_file_name: .github/config.yml
 
 # The name of the GitHub App. Defaults to the name specified in package.json
