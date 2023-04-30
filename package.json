@@ -1,17 +1,21 @@
 {
-  "name": "commit-message-lint-app",
-  "version": "3.1.1",
+  "name": "a-commit-message-lint",
+  "version": "3.1.2",
   "description": "An app for validating commit messages and pull requests title",
-  "author": "Anshul Soni <asoni@isystango.com>",
-  "license": "ISC",
-  "repository": "https://github.com/SystangoTechnologies/commit-message-lint.git",
-  "homepage": "https://github.com/SystangoTechnologies/commit-message-lint",
-  "bugs": "https://github.com/SystangoTechnologies/commit-message-lint/issues",
+  "author": "Ammar Ahmed Butt <ammar.butt@atlassiancommunity.com>",
+  "license": "MIT",
+  "repository": "https://github.com/Ammar-Knowledge/a-commit-message-lint.git",
+  "homepage": "https://github.com/Ammar-Knowledge/a-commit-message-lint",
+  "bugs": "https://github.com/Ammar-Knowledge/a-commit-message-lint/issues",
   "keywords": [
     "probot",
     "github",
     "probot-app",
-    "commit-message-lint"
+    "a-commit-message-lint",
+    "pr",
+    "commit",
+    "conventional",
+    "validate"
   ],
   "scripts": {
     "dev": "nodemon",
