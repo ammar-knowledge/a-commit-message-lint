@@ -58,9 +58,13 @@ Step 4. Run `npm start` to start the application
 [Integrating with the GitHub Marketplace API](https://developer.github.com/marketplace/integrating-with-the-github-marketplace-api/)
 
 
-## Contributors
-[Anshul Soni](https://www.linkedin.com/in/anshul-soni-3903a2101/)
-
-[Sumit Singhal](https://www.linkedin.com/in/s-singhal)
-
-[Vikas Patidar](https://www.linkedin.com/in/vikas-patidar-0106/)
+<!-- Copy and Paste Me -->
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/a-commit-message-lint-bot?path=helpers/checks.js&previewSize=100"
+    title="a-commit-message-lint-bot on Glitch"
+    allow="geolocation; microphone; camera; midi; encrypted-media; xr-spatial-tracking; fullscreen"
+    allowFullScreen
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
