@@ -7,20 +7,20 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const {
   verifyWebhookData
-} = require('middleware/verifyWebhooks.js')
+} = require('./middleware/verifyWebhooks')
 /**
  * Controllers
  */
 const {
   commitAndTitleValidator
-} = require('controllers/pullRequest')
+} = require('./controllers/pullRequest')
 const {
   marketplaceEventHandlers,
   getAccessToken
-} = require('controllers/marketplace')
+} = require('./controllers/marketplace')
 const {
   listForSuite
-} = require('controllers/checks')
+} = require('./controllers/checks')
 
 /**
  * Constants
@@ -29,7 +29,7 @@ const {
   configFileName,
   messages,
   events
-} = require('constants.js')
+} = require('./constants.js')
 const publicDirectory = path.join(`${__dirname}`, 'public')
 
 /**
