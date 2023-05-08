@@ -5,9 +5,7 @@ const express = require('express')
 const expressApp = express()
 const path = require('path')
 const bodyParser = require('body-parser')
-const {
-  verifyWebhookData
-} = require('./middleware/verifyWebhooks')
+const { verifyWebhookData } = require('./middleware/verifyWebhooks')
 /**
  * Controllers
  */
