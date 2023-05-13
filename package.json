@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "jest": "^29.5.0",
-    "nock": "^10.0.0",
+    "nock": "^13.0.0",
     "nodemon": "^2.0.22",
     "smee-client": "^1.2.3",
     "standard": "^12.0.1"
