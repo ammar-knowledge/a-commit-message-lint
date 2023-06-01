@@ -12,7 +12,7 @@ const { OAUTH_ENDPOINT, INSTALLATION_PATH } = require('../constants')
  */
 module.exports.marketplaceEventHandlers = async (req, res) => {
   try {
-    let body = req.body
+    const body = req.body
     console.log('marketplaceEventHandlers ==> ', body)
     if (body.action && eventHandlers[body.action]) {
       await eventHandlers[body.action](req, res, body)
@@ -27,7 +27,7 @@ module.exports.getAccessToken = async (req, res) => {
     const query = req.query
     console.log('AccessToken API call started')
     const getAccessToken = `${OAUTH_ENDPOINT}/access_token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&code=${query.code}&redirect_uri=${process.env.REDIRECT_URI}&state=${query.STATE}`
-    let accessToken = await rp(getAccessToken)
+    const accessToken = await rp(getAccessToken)
     console.log('AccessToken API call completed')
     res.redirect(INSTALLATION_PATH)
   } catch (error) {
@@ -39,9 +39,9 @@ module.exports.getAccessToken = async (req, res) => {
  * Market place event handlers
  * TODO: Move to separate file after finalizing structure
  */
-let eventHandlers = {
+const eventHandlers = {
   purchased: async (req, res, eventData) => {
-    let purchaserData = eventData.marketplace_purchase
+    const purchaserData = eventData.marketplace_purchase
     console.log('Event purchased triggered', purchaserData)
     /**
        * TODO: Authenticate user with github in future if we maintian user information in our database and we need to call user specific detials from github.
@@ -52,22 +52,22 @@ let eventHandlers = {
     return res.json().status(200)
   },
   cancelled: async (req, res, eventData) => {
-    let purchaserData = eventData.marketplace_purchase
+    const purchaserData = eventData.marketplace_purchase
     console.log('Event cancelled triggered', purchaserData)
     return res.json().status(200)
   },
   pending_change: async (req, res, eventData) => {
-    let purchaserData = eventData.marketplace_purchase
+    const purchaserData = eventData.marketplace_purchase
     console.log('Event pending_change triggered', purchaserData)
     return res.json().status(200)
   },
   pending_change_cancelled: async (req, res, eventData) => {
-    let purchaserData = eventData.marketplace_purchase
+    const purchaserData = eventData.marketplace_purchase
     console.log('Event pending_change_cancelled triggered', purchaserData)
     return res.json().status(200)
   },
   changed: async (req, res, eventData) => {
-    let purchaserData = eventData.marketplace_purchase
+    const purchaserData = eventData.marketplace_purchase
     console.log('Event changed triggered', purchaserData)
     return res.json().status(200)
   }

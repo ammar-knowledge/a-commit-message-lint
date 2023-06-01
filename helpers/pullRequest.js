@@ -9,9 +9,9 @@
  */
 module.exports.listCommitsOfPullRequest = async (context, owner, repo, pullNumber, perPage, pageNo) => {
   try {
-    let params = {
-      owner: owner,
-      repo: repo,
+    const params = {
+      owner,
+      repo,
       pull_number: pullNumber
     }
     if (perPage) {
@@ -21,7 +21,7 @@ module.exports.listCommitsOfPullRequest = async (context, owner, repo, pullNumbe
       params.page = pageNo
     }
     // find commits
-    let commits = await context.github.pullRequests.listCommits(params)
+    const commits = await context.github.pullRequests.listCommits(params)
     return commits
   } catch (error) {
     return error
@@ -37,13 +37,13 @@ module.exports.listCommitsOfPullRequest = async (context, owner, repo, pullNumbe
  */
 module.exports.getPullRequest = async (context, owner, repo, pullNumber) => {
   try {
-    let params = {
-      owner: owner,
-      repo: repo,
+    const params = {
+      owner,
+      repo,
       pull_number: pullNumber
     }
     // find PR
-    let pullRequestDetails = await context.github.pullRequests.get(params)
+    const pullRequestDetails = await context.github.pullRequests.get(params)
     return pullRequestDetails
   } catch (error) {
     return error

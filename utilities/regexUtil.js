@@ -8,7 +8,7 @@ module.exports.checkRegex = (inputString, pattern) => {
     let patt = ''
     let status = false
     if (pattern) {
-      let regexObj = module.exports.regexExtractor(pattern)
+      const regexObj = module.exports.regexExtractor(pattern)
       patt = new RegExp(regexObj.regexPattern, regexObj.flags)
       status = patt.test(inputString)
     } else {
@@ -26,11 +26,11 @@ module.exports.checkRegex = (inputString, pattern) => {
  */
 module.exports.regexExtractor = (rawRegexString) => {
   try {
-    let result = {
+    const result = {
       regexPattern: '',
       flags: ''
     }
-    let splited = rawRegexString.split('/')
+    const splited = rawRegexString.split('/')
     result.flags = splited[splited.length - 1]
     splited[splited.length - 1] = ''
     result.regexPattern = splited.join('')

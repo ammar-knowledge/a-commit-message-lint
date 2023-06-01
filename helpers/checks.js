@@ -7,16 +7,16 @@
  */
 module.exports.createCheckSuite = async (context, owner, repo, commitId) => {
   try {
-    let params = {
-      owner: owner,
+    const params = {
+      owner,
 
-      repo: repo,
+      repo,
       /**
              * The sha of the head commit.
              */
       head_sha: commitId
     }
-    let checkSuite = await context.github.checks.createSuite(params)
+    const checkSuite = await context.github.checks.createSuite(params)
     return checkSuite
   } catch (error) {
     return error
@@ -35,9 +35,9 @@ module.exports.createCheckSuite = async (context, owner, repo, commitId) => {
  */
 module.exports.createCheckRun = async (context, owner, repo, commitId, status, checkRunName, conclusion, output) => {
   try {
-    let params = {
-      owner: owner,
-      repo: repo,
+    const params = {
+      owner,
+      repo,
       /**
              * The name of the check. For example, "code-coverage".
              */
@@ -49,16 +49,16 @@ module.exports.createCheckRun = async (context, owner, repo, commitId, status, c
       /**
              * The current status. Can be one of `queued`, `in_progress`, or `completed`.
              */
-      status: status,
+      status,
       /**
              * The time that the check run began in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
              */
       started_at: new Date().toISOString(),
-      conclusion: conclusion,
+      conclusion,
       completed_at: new Date().toISOString(),
-      output: output
+      output
     }
-    let checkRun = await context.github.checks.create(params)
+    const checkRun = await context.github.checks.create(params)
     return checkRun
   } catch (error) {
     return error
@@ -74,12 +74,12 @@ module.exports.createCheckRun = async (context, owner, repo, commitId, status, c
  */
 module.exports.listCheckSuite = async (context, owner, repo, ref) => {
   try {
-    let params = {
-      owner: owner,
-      repo: repo,
-      ref: ref
+    const params = {
+      owner,
+      repo,
+      ref
     }
-    let checkRun = await context.github.checks.listSuitesForRef(params)
+    const checkRun = await context.github.checks.listSuitesForRef(params)
     return checkRun
   } catch (error) {
     return error
@@ -98,10 +98,10 @@ module.exports.listCheckSuite = async (context, owner, repo, ref) => {
  */
 module.exports.updateCheckRun = async (context, owner, repo, commitId, status, conclusion, output, checkRunId) => {
   try {
-    let params = {
+    const params = {
       check_run_id: checkRunId,
-      owner: owner,
-      repo: repo,
+      owner,
+      repo,
       /**
              * The name of the check. For example, "code-coverage".
              */
@@ -113,14 +113,14 @@ module.exports.updateCheckRun = async (context, owner, repo, commitId, status, c
       /**
              * The current status. Can be one of `queued`, `in_progress`, or `completed`.
              */
-      status: status,
+      status,
       /**
              * The time that the check run began in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
              */
       started_at: new Date().toISOString(),
-      conclusion: conclusion,
+      conclusion,
       completed_at: new Date().toISOString(),
-      output: output
+      output
     }
     await context.github.checks.update(params)
   } catch (error) {
@@ -137,12 +137,12 @@ module.exports.updateCheckRun = async (context, owner, repo, commitId, status, c
  */
 module.exports.listCheckSuite = async (context, owner, repo, checkSuiteId) => {
   try {
-    let params = {
-      owner: owner,
-      repo: repo,
+    const params = {
+      owner,
+      repo,
       check_suite_id: checkSuiteId
     }
-    let checkRunList = await context.github.checks.listForSuite(params)
+    const checkRunList = await context.github.checks.listForSuite(params)
     return checkRunList
   } catch (error) {
     return error
@@ -158,12 +158,12 @@ module.exports.listCheckSuite = async (context, owner, repo, checkSuiteId) => {
  */
 module.exports.listForSuite = async (context, owner, repo, checkSuiteId) => {
   try {
-    let params = {
-      owner: owner,
-      repo: repo,
+    const params = {
+      owner,
+      repo,
       check_suite_id: checkSuiteId
     }
-    let listForSuite = await context.github.checks.listForSuite(params)
+    const listForSuite = await context.github.checks.listForSuite(params)
     return listForSuite
   } catch (error) {
     return error
