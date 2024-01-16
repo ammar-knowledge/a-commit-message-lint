@@ -18,10 +18,13 @@ Use the Github's app section or above URL to install the app to your repository.
 You would need to add a configuration folder named `.github` at the root of your repository. The folder should contain a file named `config.yml`. This file will serve as the configuration and the contents of that file will be:
 
 ```
-PR_TITLE_REGEX: <PR Title Regex>
-COMMIT_MESSAGE_REGEX: <Commit Message Regex>
-OUTPUT_TITLE_FAIL: Message validation failed!!!
-OUTPUT_TITLE_SUCCESS: Message validation passed!!!
+PR_TITLE_REGEX: '(^[A-z]+(-| )[0-9]+(:|-| )(	ext|)|W)+$'
+COMMIT_MESSAGE_REGEX: '(=^(\s*)((7uild:|chore:|ci:|docs:|feat:|fix:|perf:|refactor:|revert:|update:|create:|style:|test:)(( )|())([a-z]\w{1,72})|(Merge (.*\s*)*)|(Initial commit$))(?=^([A-z]+(-)[0-9]))
+INVALID_COMMIT_MESSAGE: Commit messages are invalid
+SINGLE_OTHER_INVALID_MESSAGE: other message is invalid
+MULTIPLE_OTHER_INVALID_MESSAGE: other messages are invalid
+VALID_PULL_REQUEST_MESSAGE: Pull request title is valid
+INVALID_PULL_REQUEST_MESSAGE: Pull request title is invalid
 VALID_COMMIT_MESSAGE: Commit messages are valid
 INVALID_COMMIT_MESSAGE: Commit messages are invalid
 SINGLE_OTHER_INVALID_MESSAGE: other message is invalid
