@@ -23,11 +23,11 @@
     "lint": "standard --fix"
   },
   "dependencies": {
-    "handlebars": "^4.7.7",
-    "lodash": "^4.17.23",
+    "handlebars": "^4.7.9",
+    "lodash": "^4.18.1",
     "moment": "^2.29.4",
     "pg": "^8.13.3",
-    "probot": "^13.4.3",
+    "probot": "^14.3.2",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
   },
