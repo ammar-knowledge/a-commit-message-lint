@@ -32,7 +32,7 @@
     "request-promise": "^4.2.6"
   },
   "devDependencies": {
-    "jest": "^29.5.0",
+    "jest": "^30.0.0",
     "nock": "^14.0.0",
     "nodemon": "^3.0.0",
     "smee-client": "^3.0.0",
